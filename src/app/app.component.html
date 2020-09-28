@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind CSS Demo</title>
+</head>
+<body class="bg-white">
+  <div class="flex">
+    <div class="flex-1 fixed font-bold px-10 py-10 text-blue-800">
+        <h3>Sales</h3>
+      </div>
+      <div class="flex-1 py-10 px-40 w-2/3 relative" >
+        <div class="bg-white relative rounded-lg border border-gray-400">
+          <span class="flex items-center h-10 leading-normal bg-transparent rounded rounded-r-none border border-r-0 border-none lg:px-3 py-2 whitespace-no-wrap text-grey-dark text-sm">
+            <svg width="18" height="18" class="w-4 lg:w-auto" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8.11086 15.2217C12.0381 15.2217 15.2217 12.0381 15.2217 8.11086C15.2217 4.18364 12.0381 1 8.11086 1C4.18364 1 1 4.18364 1 8.11086C1 12.0381 4.18364 15.2217 8.11086 15.2217Z" stroke="#455A64" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M16.9993 16.9993L13.1328 13.1328" stroke="#455A64" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          <input class="rounded-l-full h-10 px-8 text-gray-700 focus:outline-none" id="search" type="text" placeholder="Search">  
+        </span></div>
+        </div>
+        <div class="flex-1 relative content-center w-full inline-block py-10 px-2 h-12 ">
+          <div>
+            <span class="py-10">
+              <select class="inline-flex h-10 py-2 px-2 border border-gray-400 rounded-lg bg-white text-sm font-medium text-blue-800 hover:text-gray-500">
+                <option>All Market Places</option>
+                <option>India</option>
+                <option>Michigan</option>
+                <option>Ohio</option>
+              </select>
+              
+            </span>
+          </div>
+        </div>
+  </div>
+  <div class="align-middle inline-block min-w-full shadow overflow-hidden bg-white shadow-dashboard px-8 pt-3 rounded-bl-lg rounded-br-lg">
+    <table class="min-w-full">
+        <thead>
+            <tr class ="h-5 bg-gray-100">
+                <th class="px-6 py-3 border-gray-300 text-left leading-4 text-blue-500 ">
+                  <div>
+                    <label class="inline-flex items-center">
+                      <input type="checkbox" class="form-checkbox">
+                      <span class="ml-2"></span>
+                    </label>
+                  </div>
+                </th>
+                <th class="px-6 py-3 border-gray-300 text-base sm:font-serif leading-4 text-gray-500">Orders</th>
+                <th class="px-6 py-3 border-gray-300 text-base sm:font-serif leading-4 text-gray-500">Customer</th>
+                <th class="px-6 py-3 border-gray-300 text-base sm:font-serif leading-4 text-gray-500">Products</th>
+                <th class="px-10 py-3 border-gray-300 text-base sm:font-serif leading-4 text-gray-500">Status</th>
+                <th class="px-6 py-3 border-gray-300 text-base sm:font-serif leading-4 text-gray-500">Total Price</th>
+                <th class="px-6 py-3 border-gray-300 text-base sm:font-serif leading-4 text-gray-500"></th>
+            </tr>
+        </thead>
+        <tbody>
+          <tr class="h-12 rounded-full hover:bg-gray-200" *ngFor="let dt of datalist">
+            <td>
+              <div>
+                <label class="inline-flex items-center px-6 py-3 border-gray-300 text-left leading-4 text-blue-500 tracking-wider">
+                  <input type="checkbox" class="form-checkbox text-blue-600">
+                  <span class="ml-2"></span>
+                </label>
+              </div>
+            </td>
+            <td><img class="-ml-2 inline-block h-10 w-10 rounded-full text-white shadow-solid" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+            {{ dt.Order }}
+            </td>
+            <td>
+              {{ dt.Customer }}</td>
+            <td class="px-12">
+              <img class="-ml-2 inline-block h-10 w-10 rounded-full text-white shadow-solid">
+              {{ dt.Products }}
+            </td>
+            <td class="px-4">
+              <button class="bg-red-200 hover:bg-red-500 text-orange-400 font-sans py-2 px-4 rounded-lg">
+                {{ dt.Status }}
+              </button>
+            </td>
+            <td class="px-4">$ {{ dt.Totalprice }}.00</td>
+            <td>
+              <button class="bg-blue-600 hover:bg-blue-800 text-white font-sans py-2 px-4 rounded-lg">
+                {{ dt.Approve }}
+              </button>
+            </td>
+          </tr>
+        </tbody>   
+</table>
+</div>
+     </body>
+</html>
